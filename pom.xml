@@ -19,6 +19,7 @@
         <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
         <org.projectlombok.version>1.18.24</org.projectlombok.version>
         <fasterxml-jackson-datatype-version>2.15.2</fasterxml-jackson-datatype-version>
+        <javax-validation-version>2.0.1.Final</javax-validation-version>
 
     </properties>
     <dependencies>
@@ -43,8 +44,14 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${fasterxml-jackson-datatype-version}</version>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax-validation-version}</version>
+        </dependency>
     </dependencies>
 <build>
+    <finalName>moneycards</finalName>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
