@@ -1,12 +1,11 @@
 package com.hoangtan.moneycards.security.resource.model;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-import static com.axonactive.agileskills.base.exception.ErrorMessage.*;
+import static com.hoangtan.moneycards.exception.ErrorMessage.*;
 
 @Setter
 @Getter
@@ -19,7 +18,6 @@ public class JwtRequest {
     @Email(message = EMAIL_WRONG_FORMAT)
     private String email;
 
-    @ApiModelProperty(example = "encrypted string")
     @NotBlank(message = PASSWORD_BLANK_OR_NULL)
     private String password;
 }

@@ -20,7 +20,7 @@
         <org.projectlombok.version>1.18.24</org.projectlombok.version>
         <fasterxml-jackson-datatype-version>2.15.2</fasterxml-jackson-datatype-version>
         <javax-validation-version>2.0.1.Final</javax-validation-version>
-
+        <javax.version>8.0</javax.version>
     </properties>
     <dependencies>
         <dependency>
@@ -48,6 +48,12 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>${javax-validation-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javax.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 <build>
