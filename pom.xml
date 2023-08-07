@@ -21,6 +21,9 @@
         <fasterxml-jackson-datatype-version>2.15.2</fasterxml-jackson-datatype-version>
         <javax-validation-version>2.0.1.Final</javax-validation-version>
         <javax.version>8.0</javax.version>
+        <java-jwt-version>4.4.0</java-jwt-version>
+        <jbcrypt-version>0.4</jbcrypt-version>
+        <hibernate-validator-version>6.2.5.Final</hibernate-validator-version>
     </properties>
     <dependencies>
         <dependency>
@@ -54,6 +57,21 @@
             <artifactId>javaee-api</artifactId>
             <version>${javax.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${java-jwt-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>${jbcrypt-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator-version}</version>
         </dependency>
     </dependencies>
 <build>

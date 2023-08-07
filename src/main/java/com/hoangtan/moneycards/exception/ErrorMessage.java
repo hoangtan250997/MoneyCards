@@ -31,8 +31,8 @@ public class ErrorMessage {
 
     //USER
     public static final String KEY_USER_ALREADY_EXISTED = "exception.input.validation.user.already.existed";
-    public static final String USER_ALREADY_EXISTED = "User already existed";
-    public static final String USER_NAME_LENGTH_CONSTRAINT = "User Name cannot exceed 255 characters";
+    public static final String USER_ALREADY_EXISTED = "UserDTO already existed";
+    public static final String USER_NAME_LENGTH_CONSTRAINT = "UserDTO Name cannot exceed 255 characters";
     public static final String KEY_USER_NAME_LENGTH_CONSTRAINT = "exception.input.validation.user.name.over.max.length";
     public static final String EMAIL_BLANK_OR_NULL = "Email cannot be blank or null";
     public static final String KEY_EMAIL_BLANK_OR_NULL = "exception.input.validation.email.blank.or.null";

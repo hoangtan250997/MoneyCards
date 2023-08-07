@@ -22,7 +22,7 @@ public class UserRoleAssignment {
 	private Integer id;
 
 	@Enumerated(EnumType.STRING)
-	private Role role;
+	private RoleEnum roleEnum;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="user_id")

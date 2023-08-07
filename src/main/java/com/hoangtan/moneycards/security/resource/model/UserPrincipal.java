@@ -1,6 +1,6 @@
 package com.hoangtan.moneycards.security.resource.model;
 
-import com.hoangtan.moneycards.entity.Role;
+import com.hoangtan.moneycards.entity.RoleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ import java.security.Principal;
 @Getter
 public class UserPrincipal implements Principal {
     private String email;
-    private Role role;
+    private RoleEnum roleEnum;
 
     @Override
     public String getName() {
