@@ -6,17 +6,18 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.axonactive.agileskills.base.config.AppConfigService;
-import com.axonactive.agileskills.base.exception.AuthorizationException;
-import com.axonactive.agileskills.base.exception.ErrorMessage;
-import com.axonactive.agileskills.base.exception.InputValidationException;
-import com.axonactive.agileskills.base.security.controller.model.JwtRequest;
-import com.axonactive.agileskills.base.security.service.dto.JwtResponse;
-import com.axonactive.agileskills.skill.entity.StatusEnum;
-import com.axonactive.agileskills.user.entity.RoleEnum;
-import com.axonactive.agileskills.user.entity.UserEntity;
-import com.axonactive.agileskills.user.service.UserService;
+
+import com.hoangtan.moneycards.base.AppConfigService;
+import com.hoangtan.moneycards.entity.RoleEnum;
+import com.hoangtan.moneycards.entity.StatusEnum;
+import com.hoangtan.moneycards.entity.User;
+import com.hoangtan.moneycards.exception.AuthorizationException;
+import com.hoangtan.moneycards.exception.ErrorMessage;
+import com.hoangtan.moneycards.exception.InputValidationException;
+import com.hoangtan.moneycards.security.resource.model.JwtRequest;
 import com.hoangtan.moneycards.security.service.AuthenticationService;
+import com.hoangtan.moneycards.security.service.dto.JwtResponse;
+import com.hoangtan.moneycards.service.UserService;
 import org.apache.commons.collections4.CollectionUtils;
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 
@@ -57,7 +58,7 @@ public class JwtUtils {
         String secretKey = AppConfigService.getSecretKey();
         String issuer = AppConfigService.getIssuer();
         int liveTime = AppConfigService.getTimeToLive();
-        RoleEnum roleEnum = userService.getEntityByEmail(jwtRequest.getEmail()).getRole();
+        RoleEnum roleEnum = userService.getEntityByEmail(jwtRequest.getEmail()).getRoles().get(0).getRoleEnum();
 
         try {
             Algorithm algorithm = Algorithm.HMAC512(secretKey);
@@ -95,9 +96,9 @@ public class JwtUtils {
         verifyJwtRequest(jwtRequest);
         String email = jwtRequest.getEmail().trim();
         String token = generateToken(jwtRequest);
-        UserEntity user = userService.getEntityByEmail(email);
-        RoleEnum roleEnum = user.getRole();
-        StatusEnum status = user.getStatus();
+        User user = userService.getEntityByEmail(email);
+        RoleEnum roleEnum = user.getRoles().get(0).getRoleEnum();
+        StatusEnum status = user.getStatusEnum();
 
         return new JwtResponse(token, email, roleEnum, status);
     }
@@ -131,7 +132,7 @@ public class JwtUtils {
             throw new ConstraintViolationException(violations);
         }
 
-        StatusEnum statusEnum = userService.getEntityByEmail(jwtRequest.getEmail()).getStatus();
+        StatusEnum statusEnum = userService.getEntityByEmail(jwtRequest.getEmail()).getStatusEnum();
         if (!isActive(statusEnum)) {
             throw new AuthorizationException(Response.Status.FORBIDDEN, ErrorMessage.KEY_FORBIDDEN_ACCESS, ErrorMessage.FORBIDDEN_ACCESS);
         }

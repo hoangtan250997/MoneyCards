@@ -1,15 +1,10 @@
 package com.hoangtan.moneycards.security.config;
 
-import com.axonactive.agileskills.base.exception.AuthorizationException;
-import com.axonactive.agileskills.base.exception.ErrorMessage;
-import com.axonactive.agileskills.base.exception.ResponseBody;
-import com.axonactive.agileskills.user.entity.RoleEnum;
+
 import com.hoangtan.moneycards.security.utility.JwtUtils;
 import com.hoangtan.moneycards.security.resource.model.RequestSecurityContext;
 import com.hoangtan.moneycards.security.resource.model.UserPrincipal;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.ThreadContext;
+
 
 import javax.annotation.security.DenyAll;
 import javax.annotation.security.RolesAllowed;

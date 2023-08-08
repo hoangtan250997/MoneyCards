@@ -5,6 +5,9 @@ import com.hoangtan.moneycards.dao.UserDAO;
 import com.hoangtan.moneycards.entity.RoleEnum;
 import com.hoangtan.moneycards.entity.StatusEnum;
 import com.hoangtan.moneycards.entity.User;
+import com.hoangtan.moneycards.entity.UserRoleAssignment;
+import com.hoangtan.moneycards.exception.AuthorizationException;
+import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.InputValidationException;
 import com.hoangtan.moneycards.service.mapper.UserMapper;
 import com.hoangtan.moneycards.service.model.UserDTO;
@@ -20,6 +23,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.ws.rs.core.Response;
 import java.util.Base64;
+import java.util.List;
 import java.util.Set;
 
 @Stateless
@@ -36,6 +40,8 @@ public class UserService {
 
     @Inject
     private UserMapper userMapper;
+    @Inject
+    private UserRoleAssignment userRoleAssignment;
 
     public UserDTO create(UserDTO user) throws InputValidationException, IllegalArgumentException {
         verifyUser(user);
@@ -44,13 +50,13 @@ public class UserService {
                 .username(user.getName().trim())
                 .email(user.getEmail())
                 .password(BCrypt.hashpw(decodePassword(user.getPassword()), BCrypt.gensalt()))
-                .status(StatusEnum.ACTIVE)
-                .roleEnum(RoleEnum.ROLE_USER)
+                .statusEnum(StatusEnum.ACTIVE)
+                .roles((List<UserRoleAssignment>) UserRoleAssignment.builder().roleEnum(RoleEnum.ROLE_USER).build())
                 .build();
         return userMapper.toDTO(userDAO.create(userEntity));
     }
 
-    public UserEntity getEntityByEmail(String email) throws AuthorizationException {
+    public User getEntityByEmail(String email) throws AuthorizationException {
         return userDAO.findByEmail(email)
                 .orElseThrow(() -> new AuthorizationException(Response.Status.UNAUTHORIZED, ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS));
     }

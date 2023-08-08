@@ -30,6 +30,7 @@ public class User {
     @Column(unique = true, nullable = false)
     @Email
     private String email;
+
     @Column(nullable = false)
     @Pattern(regexp = "^(?=.*\\d)(?=.*[a-zA-Z]).{6,}$")
     private String password;

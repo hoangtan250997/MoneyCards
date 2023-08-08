@@ -1,11 +1,11 @@
 package com.hoangtan.moneycards.security.service;
 
-import com.axonactive.agileskills.base.exception.AuthorizationException;
-import com.axonactive.agileskills.base.exception.ErrorMessage;
-import com.axonactive.agileskills.base.exception.InputValidationException;
-import com.axonactive.agileskills.base.security.controller.model.JwtRequest;
-import com.axonactive.agileskills.user.entity.UserEntity;
-import com.axonactive.agileskills.user.service.UserService;
+import com.hoangtan.moneycards.entity.User;
+import com.hoangtan.moneycards.exception.AuthorizationException;
+import com.hoangtan.moneycards.exception.ErrorMessage;
+import com.hoangtan.moneycards.exception.InputValidationException;
+import com.hoangtan.moneycards.security.resource.model.JwtRequest;
+import com.hoangtan.moneycards.service.UserService;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.ejb.Stateless;
@@ -19,7 +19,7 @@ public class AuthenticationService {
     private UserService userService;
 
     public boolean checkAuthentication(JwtRequest jwtRequest) throws InputValidationException, AuthorizationException {
-        UserEntity user = userService.getEntityByEmail(jwtRequest.getEmail());
+        User user = userService.getEntityByEmail(jwtRequest.getEmail());
         String password = decryptBase64Password(jwtRequest.getPassword());
         return BCrypt.checkpw(password, user.getPassword());
     }

@@ -2,6 +2,7 @@ package com.hoangtan.moneycards.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,8 +14,8 @@ import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
-//@RequiredArgsConstructor
 @AllArgsConstructor
+@Builder
 public class UserRoleAssignment {
 
 	@Id

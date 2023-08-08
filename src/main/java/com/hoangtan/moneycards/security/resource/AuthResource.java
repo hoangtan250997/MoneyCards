@@ -1,16 +1,12 @@
 package com.hoangtan.moneycards.security.resource;
 
-import com.axonactive.agileskills.base.exception.AuthorizationException;
-import com.axonactive.agileskills.base.exception.InputValidationException;
-import com.axonactive.agileskills.base.security.controller.model.JwtRequest;
-import com.axonactive.agileskills.base.security.service.dto.JwtResponse;
-import com.axonactive.agileskills.user.service.UserService;
 import com.hoangtan.moneycards.exception.AuthorizationException;
 import com.hoangtan.moneycards.exception.InputValidationException;
 import com.hoangtan.moneycards.security.resource.model.JwtRequest;
 import com.hoangtan.moneycards.security.service.AuthenticationService;
 import com.hoangtan.moneycards.security.service.dto.JwtResponse;
 import com.hoangtan.moneycards.security.utility.JwtUtils;
+import com.hoangtan.moneycards.service.UserService;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
