@@ -5,36 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d775b320-2809-4a4c-9810-b0e845fae6cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MoneyCards.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/base/CORSFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/base/RestConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/model/UserRoleAssignmentDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MoneyCards.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/config/AuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/AuthResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/model/JwtRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/model/RequestSecurityContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/model/UserPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/service/dto/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/utility/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/resource/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/resource/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/config/AuthorizationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/AuthResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/model/JwtRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/model/RequestSecurityContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/resource/model/UserPrincipal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/service/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/service/dto/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/security/utility/JwtUtils.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/mapper/BaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/mapper/BaseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/model/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/resource/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/resource/UserResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/resource/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/resource/UserResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,10 +68,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "H:/9. 6 CardsProject/MoneyCards"
+    "last_opened_file_path": "H:/9. 6 CardsProject/MoneyCards - Copy/src/main/java/com/hoangtan/moneycards",
+    "settings.editor.selected.configurable": "preferences.externalTools"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\9. 6 CardsProject\MoneyCards - Copy\src\main\java\com\hoangtan\moneycards" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.hoangtan.moneycards.base" />
       <recent name="com.hoangtan.moneycards.service.model" />
@@ -143,5 +140,16 @@
       <updated>1691596501558</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -4,7 +4,6 @@ import com.hoangtan.moneycards.exception.InputValidationException;
 import com.hoangtan.moneycards.service.UserService;
 import com.hoangtan.moneycards.service.model.UserDTO;
 
-import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -20,7 +19,6 @@ public class UserResource {
     @Inject
     private UserService userService;
 
-//    @RolesAllowed({"ROLE_ADMIN"})
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
