@@ -17,6 +17,7 @@ import static com.hoangtan.moneycards.exception.ErrorMessage.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDTO {
 
     private Long id;
@@ -33,6 +34,6 @@ public class UserDTO {
 
     private StatusEnum status;
 
-        private RoleEnum role;
+    private RoleEnum role;
 //    private List<UserRoleAssignmentDTO> roles;
 }
