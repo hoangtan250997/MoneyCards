@@ -1,5 +1,6 @@
 package com.hoangtan.moneycards.resource;
 
+import com.hoangtan.moneycards.exception.AuthorizationException;
 import com.hoangtan.moneycards.exception.InputValidationException;
 import com.hoangtan.moneycards.service.UserService;
 import com.hoangtan.moneycards.service.model.UserDTO;
@@ -22,7 +23,7 @@ public class UserResource {
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public Response create(UserDTO user) throws InputValidationException {
+    public Response create(UserDTO user) throws InputValidationException, AuthorizationException {
         UserDTO createdUser = userService.create(user);
         return Response.created(URI.create("users/" + createdUser.getId())).entity(createdUser).status(Response.Status.CREATED).build();
     }

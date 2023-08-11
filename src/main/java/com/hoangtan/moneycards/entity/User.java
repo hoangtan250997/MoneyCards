@@ -29,13 +29,11 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-//    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-zA-Z]).{6,}$")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-zA-Z]).{6,}$")
     private String password;
 
     private StatusEnum status;
 
-//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
-//    private List<UserRoleAssignment> roles = new ArrayList<>();
     private RoleEnum role;
 
 }

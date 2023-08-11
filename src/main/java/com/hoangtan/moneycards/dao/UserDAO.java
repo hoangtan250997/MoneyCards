@@ -20,12 +20,12 @@ public class UserDAO {
         return user;
     }
 
-    public Optional<User> findByEmail(String email) {
-        List<User> userEntityList = em.createQuery("SELECT u FROM User u " +
-                        "WHERE LOWER(trim(both from u.email)) LIKE LOWER(trim(both from :email))", User.class)
-                .setParameter("email", email)
-                .getResultList();
-
-        return userEntityList.isEmpty() ? Optional.empty() : Optional.of(userEntityList.get(0));
-    }
+//    public Optional<User> findByEmail(String email) {
+//        List<User> userEntityList = em.createQuery("SELECT u FROM User u " +
+//                        "WHERE LOWER(trim(both from u.email)) LIKE LOWER(trim(both from :email))", User.class)
+//                .setParameter("email", email)
+//                .getResultList();
+//
+//        return userEntityList.isEmpty() ? Optional.empty() : Optional.of(userEntityList.get(0));
+//    }
 }

@@ -35,5 +35,4 @@ public class UserDTO {
     private StatusEnum status;
 
     private RoleEnum role;
-//    private List<UserRoleAssignmentDTO> roles;
 }
