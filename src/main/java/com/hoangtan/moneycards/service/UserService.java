@@ -40,8 +40,8 @@ public class UserService {
     private UserMapper userMapper;
 
 
-    public UserDTO create(UserDTO user) throws InputValidationException, AuthorizationException {
-//        verifyUser(user);
+    public UserDTO create(UserDTO user) throws InputValidationException {
+        verifyUser(user);
 
         User userEntity = User.builder()
                 .name(user.getName().trim())
@@ -54,57 +54,49 @@ public class UserService {
 
     }
 
-//    public User getEntityByEmail(String email) throws AuthorizationException {
-//        return userDAO.findByEmail(email)
-//                .orElseThrow(() -> new AuthorizationException(Response.Status.UNAUTHORIZED, ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS));
-//    }
+    public User getEntityByEmail(String email) throws InputValidationException {
+        return userDAO.findByEmail(email)
+                .orElseThrow(() -> new InputValidationException(ErrorMessage.KEY_PASS_EMAIL_INVALID, ErrorMessage.PASS_EMAIL_INVALID));
+    }
 
-//    public void verifyUser(UserDTO user) throws InputValidationException {
-//        Set<ConstraintViolation<UserDTO>> violations = validator.validate(user);
-//        if (CollectionUtils.isNotEmpty(violations)) {
-//            throw new ConstraintViolationException(violations);
-//        }
-//        if (isUserExisted(user.getEmail())) {
-//            throw new InputValidationException(ErrorMessage.KEY_USER_ALREADY_EXISTED,
-//                    ErrorMessage.USER_ALREADY_EXISTED);
-//        }
-//        if (isNameNullOrEmpty(user.getName())) {
-//            user.setName(user.getEmail().split("@")[0]);
-//        }
-//        if (!isPasswordMatchPattern(user.getPassword())) {
-//            throw new InputValidationException(ErrorMessage.KEY_PASSWORD_NOT_MATCH_PATTERN,
-//                    ErrorMessage.PASSWORD_NOT_MATCH_PATTERN);
-//        }
-//    }
+    public void verifyUser(UserDTO user) throws InputValidationException {
+        Set<ConstraintViolation<UserDTO>> violations = validator.validate(user);
+        if (CollectionUtils.isNotEmpty(violations)) {
+            throw new ConstraintViolationException(violations);
+        }
+        if (isUserExisted(user.getEmail())) {
+            throw new InputValidationException(ErrorMessage.KEY_USER_ALREADY_EXISTED,
+                    ErrorMessage.USER_ALREADY_EXISTED);
+        }
+        if (isNameNullOrEmpty(user.getName())) {
+            user.setName(user.getEmail().split("@")[0]);
+        }
+        if (!isPasswordMatchPattern(user.getPassword())) {
+            throw new InputValidationException(ErrorMessage.KEY_PASSWORD_NOT_MATCH_PATTERN,
+                    ErrorMessage.PASSWORD_NOT_MATCH_PATTERN);
+        }
+    }
 
-//    private boolean isNameNullOrEmpty(String name) {
-//        return name == null || name.trim().equals("");
-//    }
-//
-//    private boolean isUserExisted(String email) {
-//        return userDAO.findByEmail(email.trim().toLowerCase()).isPresent();
-//    }
-//
-//    private boolean isPasswordMatchPattern(String password) throws InputValidationException {
-//        String pattern = "^(?=.*\\d)(?=.*[a-zA-Z]).{6,}$";
-//        return decodePassword(password).matches(pattern);
-//    }
+    private boolean isNameNullOrEmpty(String name) {
+        return name == null || name.trim().equals("");
+    }
+
+    private boolean isUserExisted(String email) {
+        return userDAO.findByEmail(email.trim().toLowerCase()).isPresent();
+    }
+
+    private boolean isPasswordMatchPattern(String password) throws InputValidationException {
+        String pattern = "^(?=.*\\d)(?=.*[a-zA-Z]).{6,}$";
+        return decodePassword(password).matches(pattern);
+    }
 
     private String decodePassword(String password) throws InputValidationException {
-//        try {
-//            byte[] decoded = Base64.getDecoder().decode(password);
-//            return (new String(decoded));
-//        }
-//        catch (IllegalArgumentException e) {
-//            throw new InputValidationException(ErrorMessage.KEY_PASSWORD_NOT_ENCODED,
-//                    ErrorMessage.PASSWORD_NOT_ENCODED);
-//        }
         try {
             byte[] decoded = Base64.getDecoder().decode(password);
             return (new String(decoded));
-        } catch (Exception e) {
-            throw new InputValidationException( ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS);
-
+        } catch (IllegalArgumentException e) {
+            throw new InputValidationException(ErrorMessage.KEY_PASSWORD_NOT_ENCODED,
+                    ErrorMessage.PASSWORD_NOT_ENCODED);
         }
     }
 }
