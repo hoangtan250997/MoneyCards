@@ -23,7 +23,7 @@ public class SpendingLimit {
     private LocalDate expirationDate;
     @ManyToOne
     @JoinColumn(name="moneyJar_id")
-    private MoneyJar moneyJar;
+    private MoneyCard moneyCard;
 
 
 }

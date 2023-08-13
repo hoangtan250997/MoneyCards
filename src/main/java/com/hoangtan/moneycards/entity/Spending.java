@@ -28,5 +28,5 @@ public class Spending {
 
     @ManyToOne
     @JoinColumn(name = "moneyJar_id")
-    private MoneyJar moneyJar;
+    private MoneyCard moneyCard;
 }

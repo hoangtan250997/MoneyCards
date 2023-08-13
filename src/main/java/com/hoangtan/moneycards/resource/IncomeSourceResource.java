@@ -26,9 +26,8 @@ public class IncomeSourceResource {
     @Consumes({MediaType.APPLICATION_JSON})
     public Response create(IncomeSourceDTO incomeSourceDTO, @HeaderParam("Authorization") String authorization) throws ResourceNotFoundException {
         String email = jwtUtils.getEmailFromToken(authorization);
-        IncomeSourceDTO createdSkill = incomeSourceService.create(incomeSourceDTO, email);
-
-        return Response.created(URI.create("income-source/" + createdSkill.getId())).entity(createdSkill).status(Response.Status.CREATED).build();
+        IncomeSourceDTO createdIncomeSource = incomeSourceService.create(incomeSourceDTO, email);
+        return Response.created(URI.create("income-source/" + createdIncomeSource.getId())).entity(createdIncomeSource).status(Response.Status.CREATED).build();
     }
 
 
