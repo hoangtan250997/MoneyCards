@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class Income {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private Double amount;
     @CreationTimestamp
     private LocalDate receivedTime;

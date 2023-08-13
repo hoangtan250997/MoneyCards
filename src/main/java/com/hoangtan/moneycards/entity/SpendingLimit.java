@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class SpendingLimit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private Double amount;
     @CreationTimestamp
@@ -23,7 +23,7 @@ public class SpendingLimit {
     private LocalDate expirationDate;
     @ManyToOne
     @JoinColumn(name="moneyJar_id")
-    private MoneyJar moneyJar;
+    private MoneyCard moneyCard;
 
 
 }

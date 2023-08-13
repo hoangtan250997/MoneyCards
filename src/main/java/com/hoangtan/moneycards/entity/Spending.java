@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class Spending {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private Double amount;
     //    @CreationTimestamp
@@ -23,10 +23,10 @@ public class Spending {
     private String purpose;
 
     @ManyToOne
-    @JoinColumn(name = "account_id")
-    private Account account;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "moneyJar_id")
-    private MoneyJar moneyJar;
+    private MoneyCard moneyCard;
 }
