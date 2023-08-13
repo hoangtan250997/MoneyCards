@@ -98,7 +98,6 @@ public class JwtUtils {
         User user = userService.getEntityByEmail(email);
         RoleEnum roleEnum = user.getRole();
         StatusEnum status = user.getStatus();
-
         return new JwtResponse(token, email, roleEnum, status);
     }
 

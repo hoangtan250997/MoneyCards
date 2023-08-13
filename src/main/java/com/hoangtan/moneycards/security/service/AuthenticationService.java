@@ -29,7 +29,7 @@ public class AuthenticationService {
             byte[] decodedBytes = Base64.getDecoder().decode(password);
             return new String(decodedBytes);
         } catch (IllegalArgumentException e) {
-            throw new InputValidationException(ErrorMessage.KEY_PASS_EMAIL_INVALID, ErrorMessage.PASS_EMAIL_INVALID);
+            throw new InputValidationException(ErrorMessage.KEY_PASSWORD_NOT_ENCODED, ErrorMessage.PASSWORD_NOT_ENCODED);
         }
     }
 
