@@ -34,7 +34,7 @@ public class AssignService {
     @Inject
     private IncomeSourceDAO incomeSourceDAO;
 
-    public AssignDTO create(AssignDTO assignDTO) {
+    public AssignDTO create(AssignDTO assignDTO) throws ResourceNotFoundException {
         Assign assign = Assign.builder()
                 .amount(assignDTO.getAmount())
                 .assignedTime(LocalDate.now())

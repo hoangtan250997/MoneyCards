@@ -26,7 +26,7 @@ public class AssignResource {
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public Response create(AssignDTO assignDTO){
+    public Response create(AssignDTO assignDTO) throws ResourceNotFoundException {
         AssignDTO createdAssign = assignService.create(assignDTO);
         return Response.created(URI.create("assign/" + createdAssign.getId())).entity(createdAssign).status(Response.Status.CREATED).build();
     }

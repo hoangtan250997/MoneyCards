@@ -2,6 +2,8 @@ package com.hoangtan.moneycards.dao;
 
 import com.hoangtan.moneycards.entity.IncomeSource;
 import com.hoangtan.moneycards.entity.MoneyCard;
+import com.hoangtan.moneycards.exception.ErrorMessage;
+import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -25,8 +27,13 @@ public class MoneyCardDAO {
         return moneyCard;
     }
 
-    public MoneyCard findById(long id) {
-        criteriaQuery.where(criteriaBuilder.equal(element.get("id"), id));
-        return em.createQuery(criteriaQuery).getSingleResult();
+    public MoneyCard findById(long id) throws ResourceNotFoundException {
+        try {
+            criteriaQuery.where(criteriaBuilder.equal(element.get("id"), id));
+            return em.createQuery(criteriaQuery).getSingleResult();
+        } catch (Exception e){
+            throw new ResourceNotFoundException(ErrorMessage.KEY_FORBIDDEN_ACCESS, ErrorMessage.DUPLICATED_TOPIC_NAME);
+        }
+
     }
 }
