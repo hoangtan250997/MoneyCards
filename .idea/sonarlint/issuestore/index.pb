@@ -9,8 +9,6 @@ Ysrc/main/java/com/hoangtan/moneycards/security/resource/model/RequestSecurityCo
 Psrc/main/java/com/hoangtan/moneycards/security/resource/model/UserPrincipal.java,7\8\7845f96478359fcde95d0f79dc68dd7658f0d499
 h
 8src/main/java/com/hoangtan/moneycards/entity/Income.java,1\3\13093180bf3dd623cb5ba856ca1225405e61b2a0
-j
-:src/main/java/com/hoangtan/moneycards/entity/Spending.java,f\b\fbdce80a9fcfe0b81e32c58da2119107e1433f29
 o
 ?src/main/java/com/hoangtan/moneycards/entity/SpendingLimit.java,a\9\a96d7b9e55d9a8bc2405cd0d00eee33f55b00c6b
 f

@@ -2,6 +2,7 @@ com\hoangtan\moneycards\dao\UserDAO.class
 com\hoangtan\moneycards\service\UserService.class
 com\hoangtan\moneycards\security\resource\model\JwtRequest$JwtRequestBuilder.class
 com\hoangtan\moneycards\resource\IncomeSourceResource.class
+com\hoangtan\moneycards\service\model\SpendingDTO.class
 com\hoangtan\moneycards\security\resource\model\JwtRequest.class
 com\hoangtan\moneycards\service\mapper\JarTypeAttributeConverter.class
 com\hoangtan\moneycards\security\resource\AuthResource.class
@@ -24,13 +25,17 @@ com\hoangtan\moneycards\service\mapper\UserMapperImpl.class
 com\hoangtan\moneycards\service\model\UserDTO.class
 com\hoangtan\moneycards\exception\ErrorMessage.class
 com\hoangtan\moneycards\service\mapper\BaseMapper.class
+com\hoangtan\moneycards\service\mapper\SpendingMapperImpl.class
+com\hoangtan\moneycards\entity\Spending$SpendingBuilder.class
 com\hoangtan\moneycards\security\service\AuthenticationService.class
+com\hoangtan\moneycards\resource\SpendingResource.class
 com\hoangtan\moneycards\security\service\dto\JwtResponse.class
 com\hoangtan\moneycards\dao\MoneyCardDAO.class
 com\hoangtan\moneycards\exception\InputValidationExceptionMapper.class
 com\hoangtan\moneycards\entity\Spending.class
 com\hoangtan\moneycards\service\mapper\AssignMapper.class
 com\hoangtan\moneycards\entity\StatusEnum.class
+com\hoangtan\moneycards\service\mapper\SpendingMapper.class
 com\hoangtan\moneycards\entity\Income.class
 com\hoangtan\moneycards\base\RestConfiguration.class
 com\hoangtan\moneycards\service\mapper\UserMapper.class
@@ -41,6 +46,7 @@ com\hoangtan\moneycards\exception\InputValidationException.class
 com\hoangtan\moneycards\security\config\AuthorizationFilter.class
 com\hoangtan\moneycards\security\utility\JwtUtils.class
 com\hoangtan\moneycards\dao\IncomeSourceDAO.class
+com\hoangtan\moneycards\service\SpendingService.class
 com\hoangtan\moneycards\service\mapper\MoneyCardMapper.class
 com\hoangtan\moneycards\exception\ResourceNotFoundException.class
 com\hoangtan\moneycards\service\mapper\AssignMapperImpl.class
@@ -54,6 +60,7 @@ com\hoangtan\moneycards\security\resource\model\UserPrincipal.class
 com\hoangtan\moneycards\entity\IncomeSource$IncomeSourceBuilder.class
 com\hoangtan\moneycards\service\model\AssignDTO.class
 com\hoangtan\moneycards\service\IncomeSourceService.class
+com\hoangtan\moneycards\dao\SpendingDAO.class
 com\hoangtan\moneycards\security\resource\model\RequestSecurityContext.class
 com\hoangtan\moneycards\service\mapper\IncomeSourceMapperImpl.class
 com\hoangtan\moneycards\entity\Assign.class

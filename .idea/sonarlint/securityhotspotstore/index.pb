@@ -11,8 +11,6 @@ h
 8src/main/java/com/hoangtan/moneycards/entity/Income.java,1\3\13093180bf3dd623cb5ba856ca1225405e61b2a0
 o
 ?src/main/java/com/hoangtan/moneycards/entity/SpendingLimit.java,a\9\a96d7b9e55d9a8bc2405cd0d00eee33f55b00c6b
-j
-:src/main/java/com/hoangtan/moneycards/entity/Spending.java,f\b\fbdce80a9fcfe0b81e32c58da2119107e1433f29
 f
 6src/main/java/com/hoangtan/moneycards/entity/User.java,e\2\e2aea02cd52773e7d998013782df05ff402d3b2f
 n
