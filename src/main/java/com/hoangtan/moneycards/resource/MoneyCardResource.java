@@ -27,7 +27,7 @@ public class MoneyCardResource {
     public Response create(MoneyCardDTO moneyCardDTO, @HeaderParam("Authorization") String authorization) throws ResourceNotFoundException {
         String email = jwtUtils.getEmailFromToken(authorization);
         MoneyCardDTO createdMoneyCard = moneyCardService.create(moneyCardDTO, email);
-        return Response.created(URI.create("income-source/" + createdMoneyCard.getId())).entity(createdMoneyCard).status(Response.Status.CREATED).build();
+        return Response.created(URI.create("money-card/" + createdMoneyCard.getId())).entity(createdMoneyCard).status(Response.Status.CREATED).build();
     }
 
 
