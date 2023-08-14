@@ -30,5 +30,12 @@ public class IncomeSourceResource {
         return Response.created(URI.create("income-source/" + createdIncomeSource.getId())).entity(createdIncomeSource).status(Response.Status.CREATED).build();
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response findById(@PathParam("id") Long id) throws ResourceNotFoundException {
+        return Response.ok(incomeSourceService.findById(id)).build();
+    }
 
 }

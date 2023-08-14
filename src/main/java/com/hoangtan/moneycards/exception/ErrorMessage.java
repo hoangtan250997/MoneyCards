@@ -17,9 +17,15 @@ public class ErrorMessage {
     public static final String SKILL_NAME_NULL_OR_BLANK = "Skill Name cannot be null or blank";
     public static final String KEY_SKILL_NAME_NULL_OR_BLANK = "exception.input.validation.skill.name.blank.or.null";
 
+    //CARD
+    public static final String CARD_NOT_FOUND = "Card not found";
+    public static final String KEY_CARD_NOT_FOUND = "exception.resource.not.found.card";
+
+    //INCOME SOURCE
+    public static final String INCOME_SOURCE_NOT_FOUND = "Income Source not found";
+    public static final String KEY_INCOME_SOURCE_NOT_FOUND = "exception.resource.not.found.income.source";
+
     //TOPIC
-    public static final String TOPIC_NOT_FOUND = "Topic not found";
-    public static final String KEY_TOPIC_NOT_FOUND = "exception.resource.not.found.topic";
     public static final String DUPLICATED_TOPIC_NAME = "Topic Name duplicated";
     public static final String KEY_DUPLICATED_TOPIC_NAME = "exception.input.validation.duplicated.topic.name";
     public static final String TOPIC_NAME_BLANK_OR_NULL = "Topic Name cannot be null or blank";

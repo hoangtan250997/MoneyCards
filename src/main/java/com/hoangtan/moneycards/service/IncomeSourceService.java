@@ -3,11 +3,13 @@ package com.hoangtan.moneycards.service;
 import com.hoangtan.moneycards.dao.IncomeSourceDAO;
 import com.hoangtan.moneycards.dao.UserDAO;
 import com.hoangtan.moneycards.entity.IncomeSource;
+import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 //import com.hoangtan.moneycards.service.mapper.IncomeSourceMapper;
 import com.hoangtan.moneycards.service.mapper.IncomeSourceMapper;
 import com.hoangtan.moneycards.service.model.IncomeSourceDTO;
+import com.hoangtan.moneycards.service.model.MoneyCardDTO;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -32,5 +34,10 @@ public class IncomeSourceService {
                         ErrorMessage.SKILL_NOT_FOUND)))
                 .build();
         return incomeSourceMapper.toDTO(incomeSourceDAO.create(incomeSource));
+    }
+
+    public IncomeSourceDTO findById(Long id) throws ResourceNotFoundException {
+        IncomeSource incomeSource = incomeSourceDAO.findById(id).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_INCOME_SOURCE_NOT_FOUND, ErrorMessage.INCOME_SOURCE_NOT_FOUND));
+        return incomeSourceMapper.toDTO(incomeSource);
     }
 }
