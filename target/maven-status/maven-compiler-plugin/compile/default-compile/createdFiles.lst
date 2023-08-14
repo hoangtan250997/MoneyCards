@@ -18,7 +18,6 @@ com\hoangtan\moneycards\exception\AuthorizationExceptionMapper.class
 com\hoangtan\moneycards\entity\RoleEnum.class
 com\hoangtan\moneycards\exception\ResponseBody.class
 com\hoangtan\moneycards\entity\MoneyCard.class
-com\hoangtan\moneycards\dao\AssignDAO.class
 com\hoangtan\moneycards\service\mapper\IncomeSourceMapper.class
 com\hoangtan\moneycards\service\mapper\UserMapperImpl.class
 com\hoangtan\moneycards\service\model\UserDTO.class
@@ -35,7 +34,6 @@ com\hoangtan\moneycards\entity\Income.class
 com\hoangtan\moneycards\base\RestConfiguration.class
 com\hoangtan\moneycards\service\mapper\UserMapper.class
 com\hoangtan\moneycards\base\AppConfigService.class
-com\hoangtan\moneycards\resource\AssignResource.class
 com\hoangtan\moneycards\service\model\IncomeSourceDTO$IncomeSourceDTOBuilder.class
 com\hoangtan\moneycards\exception\InputValidationException.class
 com\hoangtan\moneycards\security\config\AuthorizationFilter.class
@@ -44,7 +42,6 @@ com\hoangtan\moneycards\dao\IncomeSourceDAO.class
 com\hoangtan\moneycards\service\mapper\MoneyCardMapper.class
 com\hoangtan\moneycards\exception\ResourceNotFoundException.class
 com\hoangtan\moneycards\service\mapper\AssignMapperImpl.class
-com\hoangtan\moneycards\service\AssignService.class
 com\hoangtan\moneycards\entity\User$UserBuilder.class
 com\hoangtan\moneycards\service\model\MoneyCardDTO.class
 com\hoangtan\moneycards\resource\MoneyCardResource.class

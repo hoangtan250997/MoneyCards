@@ -30,5 +30,13 @@ public class MoneyCardResource {
         return Response.created(URI.create("money-card/" + createdMoneyCard.getId())).entity(createdMoneyCard).status(Response.Status.CREATED).build();
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response findById(@PathParam("id") Long id) throws ResourceNotFoundException {
+        return Response.ok(moneyCardService.findById(id)).build();
+    }
+
 
 }

@@ -12,6 +12,7 @@ import com.hoangtan.moneycards.service.model.MoneyCardDTO;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.util.List;
 
 @Stateless
 public class MoneyCardService {
@@ -34,5 +35,9 @@ public class MoneyCardService {
                         ErrorMessage.SKILL_NOT_FOUND)))
                 .build();
         return moneyCardMapper.toDTO(moneyCardDAO.create(moneyCard));
+    }
+
+    public List<MoneyCardDTO> findById(Long id) throws ResourceNotFoundException {
+        return moneyCardMapper.toDTOList(moneyCardDAO.findById(id));
     }
 }

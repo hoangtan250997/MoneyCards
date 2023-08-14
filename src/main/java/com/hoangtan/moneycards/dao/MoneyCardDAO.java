@@ -11,6 +11,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class MoneyCardDAO {
@@ -27,13 +29,21 @@ public class MoneyCardDAO {
         return moneyCard;
     }
 
-    public MoneyCard findById(long id) throws ResourceNotFoundException {
-        try {
-            criteriaQuery.where(criteriaBuilder.equal(element.get("id"), id));
-            return em.createQuery(criteriaQuery).getSingleResult();
-        } catch (Exception e){
-            throw new ResourceNotFoundException(ErrorMessage.KEY_FORBIDDEN_ACCESS, ErrorMessage.DUPLICATED_TOPIC_NAME);
-        }
+//    public MoneyCard findById(long id) throws ResourceNotFoundException {
+//        try {
+//            criteriaQuery.where(criteriaBuilder.equal(element.get("id"), id));
+//            return em.createQuery(criteriaQuery).getSingleResult();
+//        } catch (Exception e){
+//            throw new ResourceNotFoundException(ErrorMessage.KEY_FORBIDDEN_ACCESS, ErrorMessage.DUPLICATED_TOPIC_NAME);
+//        }
+//    }
 
+    public Optional<MoneyCard> findById(Long id) {
+        List<MoneyCard> moneyCardList = em.createQuery("SELECT t FROM MoneyCard t " +
+                        "WHERE t.id = :id ", MoneyCard.class)
+                .setParameter("id", id)
+                .getResultList();
+
+        return moneyCardList.isEmpty() ? Optional.empty() : Optional.of(moneyCardList.get(0));
     }
 }
