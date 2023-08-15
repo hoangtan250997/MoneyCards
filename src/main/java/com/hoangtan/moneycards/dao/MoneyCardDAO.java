@@ -3,8 +3,6 @@ package com.hoangtan.moneycards.dao;
 import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
-import com.hoangtan.moneycards.service.mapper.JarTypeAttributeConverter;
-import com.hoangtan.moneycards.service.mapper.MoneyCardMapper;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -15,7 +13,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Stateless
 public class MoneyCardDAO {
@@ -51,9 +48,8 @@ public class MoneyCardDAO {
         return moneyCardList;
     }
 
-    public MoneyCard deposit(MoneyCard moneyCard) {
+    public void update(MoneyCard moneyCard) {
         em.merge(moneyCard);
-        return moneyCard;
     }
 
 }

@@ -13,6 +13,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
+import java.util.List;
 
 @Path("/assign")
 public class AssignResource {
@@ -26,9 +27,10 @@ public class AssignResource {
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
-    public Response create(AssignDTO assignDTO) throws ResourceNotFoundException {
-        AssignDTO createdAssign = assignService.create(assignDTO);
-        return Response.created(URI.create("assign/" + createdAssign.getId())).entity(createdAssign).status(Response.Status.CREATED).build();
+    public Response create(AssignDTO assignDTO, @HeaderParam("Authorization") String authorization) throws ResourceNotFoundException {
+        String email = jwtUtils.getEmailFromToken(authorization);
+        List<AssignDTO> createdAssign = assignService.create(assignDTO, email);
+        return Response.created(URI.create("assign")).entity(createdAssign).status(Response.Status.CREATED).build();
     }
 
 

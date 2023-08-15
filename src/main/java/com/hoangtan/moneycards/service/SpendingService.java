@@ -2,6 +2,7 @@ package com.hoangtan.moneycards.service;
 
 import com.hoangtan.moneycards.dao.*;
 import com.hoangtan.moneycards.entity.Assign;
+import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.entity.Spending;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
@@ -37,6 +38,10 @@ public class SpendingService {
                 .purpose(spendingDTO.getPurpose())
                 .user(userDAO.findByEmail(email).orElseThrow(()-> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS)))
                 .build();
+        MoneyCard moneyCard = moneyCardDAO.findById(spendingDTO.getMoneyCardId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_CARD_NOT_FOUND, ErrorMessage.CARD_NOT_FOUND));
+        moneyCard.setBalance(moneyCard.getBalance()-spendingDTO.getAmount());
+        moneyCardDAO.update(moneyCard);
+
         return spendingMapper.toDTO(spendingDAO.create(spending));
     }
 }

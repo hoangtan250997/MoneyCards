@@ -1,5 +1,7 @@
 package com.hoangtan.moneycards.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,7 +41,7 @@ public class User {
 
     private RoleEnum role;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Fetch(FetchMode.SUBSELECT)
+    @JsonBackReference
     private List<MoneyCard> moneyCard;
 
 }

@@ -46,4 +46,8 @@ public class IncomeSourceDAO {
                 .getResultList();
         return incomeSourceList;
     }
+
+    public void update(IncomeSource incomeSource){
+        em.merge(incomeSource);
+    }
 }
