@@ -27,6 +27,9 @@ public class AssignService {
     private AssignDAO assignDAO;
 
     @Inject
+    private MoneyCardService moneyCardService;
+
+    @Inject
     private UserDAO userDAO;
 
     @Inject
@@ -42,6 +45,9 @@ public class AssignService {
                 .moneyCard(moneyCardDAO.findById(assignDTO.getMoneyCardId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_CARD_NOT_FOUND, ErrorMessage.CARD_NOT_FOUND)))
                 .incomeSource(incomeSourceDAO.findById(assignDTO.getIncomeSourceId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_INCOME_SOURCE_NOT_FOUND, ErrorMessage.INCOME_SOURCE_NOT_FOUND)))
                 .build();
+        MoneyCard moneyCard = moneyCardDAO.findById(assignDTO.getMoneyCardId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_CARD_NOT_FOUND, ErrorMessage.CARD_NOT_FOUND));
+        moneyCard.setBalance(moneyCard.getBalance()+assignDTO.getAmount());
+        moneyCardDAO.deposit(moneyCard);
         return assignMapper.toDTO(assignDAO.create(assign));
     }
 }

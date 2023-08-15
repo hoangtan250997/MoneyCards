@@ -2,12 +2,10 @@ package com.hoangtan.moneycards.service;
 
 
 import com.hoangtan.moneycards.dao.UserDAO;
-import com.hoangtan.moneycards.entity.RoleEnum;
-import com.hoangtan.moneycards.entity.StatusEnum;
-import com.hoangtan.moneycards.entity.User;
-import com.hoangtan.moneycards.exception.AuthorizationException;
+import com.hoangtan.moneycards.entity.*;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.InputValidationException;
+import com.hoangtan.moneycards.service.mapper.JarTypeAttributeConverter;
 import com.hoangtan.moneycards.service.mapper.UserMapper;
 import com.hoangtan.moneycards.service.model.UserDTO;
 import org.apache.commons.collections4.CollectionUtils;
@@ -20,9 +18,10 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validation;
 import javax.validation.Validator;
-import javax.ws.rs.core.Response;
 
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 import java.util.Set;
 
 @Stateless
@@ -39,6 +38,7 @@ public class UserService {
     @Inject
     private UserMapper userMapper;
 
+    private JarTypeAttributeConverter jarTypeAttributeConverter = new JarTypeAttributeConverter();
 
     public UserDTO create(UserDTO user) throws InputValidationException {
         verifyUser(user);
@@ -50,6 +50,23 @@ public class UserService {
                 .status(StatusEnum.ACTIVE)
                 .role(RoleEnum.ROLE_USER)
                 .build();
+
+        List<MoneyCard> moneyCardList = new ArrayList<>();
+        for (int i = 1; i < 8; i++) {
+            MoneyCard moneyCard = MoneyCard.builder()
+                    .jarType(jarTypeAttributeConverter.convertToEntityAttribute(i))
+                    .balance((double) 0)
+                    .percentage(0.1)
+                    .user(userEntity)
+                    .build();
+
+            if (i == 1) moneyCard.setPercentage(0.55);
+            if (i == 6) moneyCard.setPercentage(0.05);
+            if (i == 7) moneyCard.setPercentage(1.0);
+
+            moneyCardList.add(moneyCard);
+        }
+        userEntity.setMoneyCard(moneyCardList);
         return userMapper.toDTO(userDAO.create(userEntity));
 
     }

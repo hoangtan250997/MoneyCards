@@ -38,5 +38,22 @@ public class MoneyCardResource {
         return Response.ok(moneyCardService.findById(id)).build();
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response findByUser(@HeaderParam("Authorization") String authorization) throws ResourceNotFoundException {
+        String email = jwtUtils.getEmailFromToken(authorization);
+        return Response.ok(moneyCardService.findByUser(email)).build();
+    }
+
+    @GET
+    @Path("/type/{jarType}")
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response findById(@HeaderParam("Authorization") String authorization,@PathParam("jarType") int jarType)  throws ResourceNotFoundException {
+        String email = jwtUtils.getEmailFromToken(authorization);
+        return Response.ok(moneyCardService.findByJarTypeAndUserId(jarType,email)).build();
+    }
+
 
 }
