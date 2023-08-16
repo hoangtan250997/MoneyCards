@@ -4,6 +4,7 @@ import com.hoangtan.moneycards.dao.*;
 import com.hoangtan.moneycards.entity.Assign;
 import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.entity.Spending;
+import com.hoangtan.moneycards.entity.User;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 import com.hoangtan.moneycards.service.mapper.SpendingMapper;
@@ -14,6 +15,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Stateless
 public class SpendingService {
@@ -43,5 +45,11 @@ public class SpendingService {
         moneyCardDAO.update(moneyCard);
 
         return spendingMapper.toDTO(spendingDAO.create(spending));
+    }
+
+    public List<SpendingDTO> findByJarTypeAndUser(int jarType,String email) throws ResourceNotFoundException {
+        User user = userDAO.findByEmail(email).orElseThrow(()-> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS));
+        List<Spending> spendingList = spendingDAO.findByJarTypeAndUser(jarType, user.getId());
+        return spendingMapper.toDTOList(spendingList);
     }
 }

@@ -6,7 +6,7 @@ import javax.ejb.ApplicationException;
 import javax.ws.rs.core.Response;
 
 @ApplicationException
-public class ResourceNotFoundException extends Exception {
+public class ResourceNotFoundException extends RuntimeException {
 
     @Getter
     private final transient ResponseBody responseBody;

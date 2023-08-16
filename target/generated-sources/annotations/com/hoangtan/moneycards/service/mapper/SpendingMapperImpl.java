@@ -11,8 +11,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-16T13:27:19+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.18 (Oracle Corporation)"
+    date = "2023-08-17T01:52:50+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Oracle Corporation)"
 )
 @ApplicationScoped
 public class SpendingMapperImpl implements SpendingMapper {
