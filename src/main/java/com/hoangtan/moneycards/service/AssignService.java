@@ -56,16 +56,18 @@ public class AssignService {
         for (MoneyCardDTO moneyCardDTO : moneyCardDTOList
         ) {
             Assign assign = Assign.builder()
-                    .amount(assignDTO.getAmount())
                     .assignedTime(LocalDateTime.now())
                     .incomeSource(incomeSource)
                     .build();
 
             if (jarTypeAttributeConverter.convertToDatabaseColumn(moneyCardDTO.getJarType()) != 7) {
+
                 MoneyCard moneyCard = moneyCardMapper.toEntity(moneyCardDTO);
                 moneyCard.setBalance(moneyCard.getBalance() + assignDTO.getAmount()*moneyCardDTO.getPercentage());
                 moneyCard.setUser(userDAO.findByEmail(email).orElseThrow(()->new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS)));
                 moneyCardDAO.update(moneyCard);
+
+                assign.setAmount(assignDTO.getAmount()*moneyCard.getPercentage());
                 assign.setMoneyCard(moneyCard);
                 assignList.add(assignDAO.create(assign));
                 incomeSourceDAO.update(incomeSource);
@@ -74,8 +76,6 @@ public class AssignService {
             }
 
         }
-
-
        return assignMapper.toDTOList(assignList);
     }
 }
