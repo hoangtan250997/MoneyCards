@@ -10,8 +10,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-17T01:52:51+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Oracle Corporation)"
+    date = "2023-08-17T15:58:41+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.18 (Oracle Corporation)"
 )
 @ApplicationScoped
 public class IncomeSourceMapperImpl implements IncomeSourceMapper {
