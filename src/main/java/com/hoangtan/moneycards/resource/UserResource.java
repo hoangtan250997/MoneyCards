@@ -4,6 +4,7 @@ import com.hoangtan.moneycards.exception.AuthorizationException;
 import com.hoangtan.moneycards.exception.InputValidationException;
 import com.hoangtan.moneycards.service.UserService;
 import com.hoangtan.moneycards.service.model.UserDTO;
+import io.swagger.annotations.Api;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -15,6 +16,7 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 
 @Path("/users")
+@Api(tags = {"Users"})
 public class UserResource {
 
     @Inject

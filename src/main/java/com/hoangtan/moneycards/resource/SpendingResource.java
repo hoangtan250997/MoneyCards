@@ -5,6 +5,7 @@ import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 import com.hoangtan.moneycards.security.utility.JwtUtils;
 import com.hoangtan.moneycards.service.SpendingService;
 import com.hoangtan.moneycards.service.model.SpendingDTO;
+import io.swagger.annotations.Api;
 import org.hibernate.annotations.Parameter;
 
 import javax.inject.Inject;
@@ -15,6 +16,7 @@ import java.net.URI;
 import java.util.List;
 
 @Path("/spending")
+@Api(tags = {"Spending"})
 public class SpendingResource {
 
     @Inject

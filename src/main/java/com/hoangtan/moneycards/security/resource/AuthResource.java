@@ -7,6 +7,7 @@ import com.hoangtan.moneycards.security.service.AuthenticationService;
 import com.hoangtan.moneycards.security.service.dto.JwtResponse;
 import com.hoangtan.moneycards.security.utility.JwtUtils;
 import com.hoangtan.moneycards.service.UserService;
+import io.swagger.annotations.Api;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -17,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/auth")
+@Api(tags = {"Authentication"})
 public class AuthResource {
 
     @Inject

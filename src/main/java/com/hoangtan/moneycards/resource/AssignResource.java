@@ -7,6 +7,7 @@ import com.hoangtan.moneycards.service.AssignService;
 import com.hoangtan.moneycards.service.MoneyCardService;
 import com.hoangtan.moneycards.service.model.AssignDTO;
 import com.hoangtan.moneycards.service.model.MoneyCardDTO;
+import io.swagger.annotations.Api;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -16,6 +17,7 @@ import java.net.URI;
 import java.util.List;
 
 @Path("/assign")
+@Api(tags = {"Asign"})
 public class AssignResource {
 
     @Inject

@@ -6,7 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.hoangtan.moneycards.base.AppConfigService;
+import com.hoangtan.moneycards.config.AppConfigService;
 import com.hoangtan.moneycards.entity.RoleEnum;
 import com.hoangtan.moneycards.entity.StatusEnum;
 import com.hoangtan.moneycards.entity.User;

@@ -5,6 +5,7 @@ import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 import com.hoangtan.moneycards.security.utility.JwtUtils;
 import com.hoangtan.moneycards.service.IncomeSourceService;
 import com.hoangtan.moneycards.service.model.IncomeSourceDTO;
+import io.swagger.annotations.Api;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -13,6 +14,8 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 
 @Path("/income-source")
+@Api(tags = {"IncomeSource"})
+
 public class IncomeSourceResource {
 
     @Inject

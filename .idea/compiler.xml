@@ -20,5 +20,8 @@
         <module name="MoneyCards" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AgileSkills" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

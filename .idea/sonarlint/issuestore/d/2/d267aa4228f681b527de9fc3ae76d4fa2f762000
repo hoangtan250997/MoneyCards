@@ -1,0 +1,7 @@
+
+…
+java:S1488+"hImmediately return this expression instead of assigning it to the temporary variable "incomeSourceList".(¨Ë°ª8Ã¹ÄúŸ1
+b
+java:S1128"ERemove this unused import 'com.hoangtan.moneycards.entity.MoneyCard'.(£ù‚8ÅºÄúŸ1
+b
+java:S1128"@Remove this unused import 'com.hoangtan.moneycards.entity.User'.(ÊÆ±³øÿÿÿÿ8ÆºÄúŸ1

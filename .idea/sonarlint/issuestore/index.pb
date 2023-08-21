@@ -19,8 +19,6 @@ f
 6src/main/java/com/hoangtan/moneycards/dao/UserDAO.java,1\2\1247176c9d543014d87e38ad762386cca5cd929e
 v
 Fsrc/main/java/com/hoangtan/moneycards/service/mapper/AssignMapper.java,1\6\16d341f4be28072992eb732842adb4e541cbeecf
-p
-@src/main/java/com/hoangtan/moneycards/resource/UserResource.java,d\c\dc35a023cdda794a62a1a532c1d118fcdaa91dc9
 }
 Msrc/main/java/com/hoangtan/moneycards/exception/InputValidationException.java,f\0\f0de0dcfc3299d3126a2166d3e3f3715efdc1cb3
 Å
@@ -33,7 +31,5 @@ t
 Dsrc/main/java/com/hoangtan/moneycards/security/utility/JwtUtils.java,b\b\bb9175c9c18431a78c428c7f62fec0bfe66b14d7
 q
 Asrc/main/java/com/hoangtan/moneycards/exception/ErrorMessage.java,7\a\7a0031c3120d4d1eac92eb537a7967502ce7b4a1
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 x
 Hsrc/main/java/com/hoangtan/moneycards/service/mapper/SpendingMapper.java,2\f\2ff9c5cd674c396e7bac353b775e25e15f42461f
