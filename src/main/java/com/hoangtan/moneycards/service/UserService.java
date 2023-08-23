@@ -40,6 +40,11 @@ public class UserService {
 
     private JarTypeAttributeConverter jarTypeAttributeConverter = new JarTypeAttributeConverter();
 
+    public List<UserDTO> findAll(){
+    List<User> userList = userDAO.findAll();
+    return userMapper.toDTOList(userList);
+    }
+
     public UserDTO create(UserDTO user) throws InputValidationException {
         verifyUser(user);
 
