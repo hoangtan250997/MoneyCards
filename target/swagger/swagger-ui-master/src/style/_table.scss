@@ -101,7 +101,7 @@ table
         border-width: 1px;
     }
 
-    .markdown, .renderedMarkdown {
+    .markdown {
         p {
             margin: 0;
         }
@@ -169,7 +169,6 @@ table
 
     input {
         margin-right: 7px;
-        width: auto;
     }
 
     &.disabled {
@@ -187,7 +186,7 @@ table
 .response-col_description {
     width: 99%; // forces other columns to shrink to their content widths
 
-    .markdown, .renderedMarkdown {
+    .markdown {
         p {
             margin: 0;
         }

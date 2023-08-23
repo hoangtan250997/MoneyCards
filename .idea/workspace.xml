@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d775b320-2809-4a4c-9810-b0e845fae6cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93cbdd0973c9a7b59e5cef90a94300ab95fd66e5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/3/93cbdd0973c9a7b59e5cef90a94300ab95fd66e5" beforeDir="false" />
+    <list default="true" id="00765999-f231-4115-966c-4d25e079cd0a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/AssignMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/AssignMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/IncomeSourceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/IncomeSourceMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/MoneyCardMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/MoneyCardMapperImpl.java" afterDir="false" />
@@ -16,7 +15,10 @@
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/UserMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/moneycards.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/moneycards/docs/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/docs/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/moneycards/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/moneycards/docs/oauth2-redirect.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/docs/oauth2-redirect.html" afterDir="false" />
@@ -859,15 +861,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "H:/9. 6 CardsProject/MoneyCards - Copy/src/main/resources",
-    "settings.editor.selected.configurable": "preferences.externalTools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Chris/7. Personal project/MoneyCards&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.externalTools&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\9. 6 CardsProject\MoneyCards - Copy\src\main\resources" />
@@ -1046,7 +1048,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Deploy To Docker" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="docker cp target/moneycards.war 14f215dee5f8829c986bfa28159ea75024fa0781bbf29e29a9b90adf80b61cc8:/opt/jboss/wildfly/standalone/deployments/" />
+      <option name="SCRIPT_TEXT" value="docker cp target/moneycards.war 5ad069dc360832b5dc816d8a89addddee88790688435dac5c9e8da6381fa3d8b:/opt/jboss/wildfly/standalone/deployments/" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="" />
       <option name="SCRIPT_OPTIONS" value="" />

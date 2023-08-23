@@ -15,8 +15,6 @@ n
 >src/main/java/com/hoangtan/moneycards/entity/IncomeSource.java,7\4\741470553bf8546615df8e2a1a3ce9b7fa548e9b
 ƒ
 Ssrc/main/java/com/hoangtan/moneycards/service/mapper/JarTypeAttributeConverter.java,3\6\36447bbfc7ef06b0b2758f6ebdb6f7c0b01444f6
-f
-6src/main/java/com/hoangtan/moneycards/dao/UserDAO.java,1\2\1247176c9d543014d87e38ad762386cca5cd929e
 v
 Fsrc/main/java/com/hoangtan/moneycards/service/mapper/AssignMapper.java,1\6\16d341f4be28072992eb732842adb4e541cbeecf
 }
