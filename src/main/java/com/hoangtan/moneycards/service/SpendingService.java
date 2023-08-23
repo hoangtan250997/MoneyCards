@@ -1,20 +1,20 @@
 package com.hoangtan.moneycards.service;
 
 import com.hoangtan.moneycards.dao.*;
-import com.hoangtan.moneycards.entity.Assign;
+import com.hoangtan.moneycards.entity.JarType;
 import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.entity.Spending;
 import com.hoangtan.moneycards.entity.User;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
+import com.hoangtan.moneycards.service.mapper.JarTypeAttributeConverter;
 import com.hoangtan.moneycards.service.mapper.SpendingMapper;
-import com.hoangtan.moneycards.service.model.AssignDTO;
+
 import com.hoangtan.moneycards.service.model.SpendingDTO;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Stateless
@@ -31,6 +31,8 @@ public class SpendingService {
 
     @Inject
     private MoneyCardDAO moneyCardDAO;
+
+    private JarTypeAttributeConverter jarTypeAttributeConverter = new JarTypeAttributeConverter();
 
     public SpendingDTO create(SpendingDTO spendingDTO, String email) throws ResourceNotFoundException {
         Spending spending = Spending.builder()
@@ -49,7 +51,8 @@ public class SpendingService {
 
     public List<SpendingDTO> findByJarTypeAndUser(int jarType, String email) throws ResourceNotFoundException {
         User user = userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS));
-        List<Spending> spendingList = spendingDAO.findByJarTypeAndUser(jarType, user.getId());
+        JarType jarTypeEnum = jarTypeAttributeConverter.convertToEntityAttribute(jarType);
+        List<Spending> spendingList = spendingDAO.findByJarTypeAndUser(jarTypeEnum, user.getId());
         return spendingMapper.toDTOList(spendingList);
     }
 
@@ -57,6 +60,10 @@ public class SpendingService {
         User user = userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS));
         List<Spending> spendingList = spendingDAO.findByUser(user.getId());
         return spendingMapper.toDTOList(spendingList);
-
+    }
+    public List<SpendingDTO> findBetweenTwoDays(String email, LocalDate startDate, LocalDate endDate) {
+        User user = userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS));
+        List<Spending> spendingList = spendingDAO.findBetweenTwoDays(user.getId(), startDate, endDate);
+        return spendingMapper.toDTOList(spendingList);
     }
 }

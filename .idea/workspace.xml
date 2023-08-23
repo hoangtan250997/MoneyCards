@@ -5,28 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d775b320-2809-4a4c-9810-b0e845fae6cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/819bfe75f10dd43106ef06399b70969060f1286e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf16f5d98e4f4c1585ac0e0d6861d79cdd5d7b88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fbdce80a9fcfe0b81e32c58da2119107e1433f29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/1/819bfe75f10dd43106ef06399b70969060f1286e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/f/bf16f5d98e4f4c1585ac0e0d6861d79cdd5d7b88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/b/fbdce80a9fcfe0b81e32c58da2119107e1433f29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a34f754a18510bbcd1f67d3f18fa8c05f09ddfb4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/3/a34f754a18510bbcd1f67d3f18fa8c05f09ddfb4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/dao/SpendingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/dao/SpendingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/resource/SpendingResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/resource/SpendingResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/SpendingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hoangtan/moneycards/service/SpendingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/dao/SpendingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/dao/SpendingDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/resource/SpendingResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/resource/SpendingResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/service/SpendingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hoangtan/moneycards/service/SpendingService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/AssignMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/AssignMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/IncomeSourceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/IncomeSourceMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/MoneyCardMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/MoneyCardMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/SpendingMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/SpendingMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hoangtan/moneycards/service/mapper/UserMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/moneycards.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/swagger/pax_global_header" beforeDir="false" afterPath="$PROJECT_DIR$/target/swagger/pax_global_header" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/swagger/swagger-ui-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/swagger/swagger-ui-master/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/swagger/swagger-ui-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/swagger/swagger-ui-master/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/swagger/swagger-ui-master/src/style/_table.scss" beforeDir="false" afterPath="$PROJECT_DIR$/target/swagger/swagger-ui-master/src/style/_table.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/dao/SpendingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/dao/SpendingDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/resource/SpendingResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/resource/SpendingResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/service/SpendingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/moneycards/WEB-INF/classes/com/hoangtan/moneycards/service/SpendingService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

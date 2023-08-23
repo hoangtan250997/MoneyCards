@@ -13,6 +13,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Path("/spending")
@@ -33,13 +36,14 @@ public class SpendingResource {
         SpendingDTO createdSpending = spendingService.create(spendingDTO, email);
         return Response.created(URI.create("spending/" + createdSpending.getId())).entity(createdSpending).status(Response.Status.CREATED).build();
     }
+
     @POST
     @Path("/spending-list")
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
     public Response findByJarTypeAndUser(@QueryParam("jarType") int jarType, @HeaderParam("Authorization") String authorization) throws ResourceNotFoundException {
         String email = jwtUtils.getEmailFromToken(authorization);
-        List<SpendingDTO>  spendingDTOList = spendingService.findByJarTypeAndUser(jarType, email);
+        List<SpendingDTO> spendingDTOList = spendingService.findByJarTypeAndUser(jarType, email);
         return Response.ok(spendingDTOList).build();
     }
 
@@ -52,4 +56,16 @@ public class SpendingResource {
         return Response.ok().entity(createdSpending).status(Response.Status.CREATED).build();
     }
 
+    @GET
+    @Path("/between-two-days")
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response findBetweenTwoDays(@HeaderParam("Authorization") String authorization, @QueryParam("startDate") String startDate, @QueryParam("endDate") String endDate) throws ResourceNotFoundException {
+        String email = jwtUtils.getEmailFromToken(authorization);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDate formattedStartDate = LocalDate.parse(startDate, formatter);
+        LocalDate formattedEndDate = LocalDate.parse(endDate, formatter);
+        List<SpendingDTO> createdSpending = spendingService.findBetweenTwoDays(email, formattedStartDate, formattedEndDate);
+        return Response.ok().entity(createdSpending).status(Response.Status.CREATED).build();
+    }
 }

@@ -1,11 +1,17 @@
 package com.hoangtan.moneycards.dao;
 
 
+import com.hoangtan.moneycards.entity.Spending;
 import com.hoangtan.moneycards.entity.User;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +35,9 @@ public class UserDAO {
     }
 
     public List<User> findAll() {
-        List<User> userEntityList = em.createQuery("SELECT u FROM User u ", User.class)
+        return em.createQuery("SELECT u FROM User u ", User.class)
                 .getResultList();
-        return userEntityList;
     }
+
+
 }
