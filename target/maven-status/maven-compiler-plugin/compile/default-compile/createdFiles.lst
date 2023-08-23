@@ -41,6 +41,7 @@ com\hoangtan\moneycards\entity\Income.class
 com\hoangtan\moneycards\service\mapper\UserMapper.class
 com\hoangtan\moneycards\config\AppConfigService.class
 com\hoangtan\moneycards\resource\AssignResource.class
+com\hoangtan\moneycards\exception\MinusException.class
 com\hoangtan\moneycards\service\model\IncomeSourceDTO$IncomeSourceDTOBuilder.class
 com\hoangtan\moneycards\exception\InputValidationException.class
 com\hoangtan\moneycards\security\config\AuthorizationFilter.class
@@ -59,6 +60,7 @@ com\hoangtan\moneycards\entity\User.class
 com\hoangtan\moneycards\entity\JarType.class
 com\hoangtan\moneycards\security\resource\model\UserPrincipal.class
 com\hoangtan\moneycards\entity\IncomeSource$IncomeSourceBuilder.class
+com\hoangtan\moneycards\exception\MinusExceptionMapper.class
 com\hoangtan\moneycards\service\model\AssignDTO.class
 com\hoangtan\moneycards\service\IncomeSourceService.class
 com\hoangtan\moneycards\dao\SpendingDAO.class

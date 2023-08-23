@@ -8,6 +8,7 @@ import com.hoangtan.moneycards.entity.Assign;
 import com.hoangtan.moneycards.entity.IncomeSource;
 import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.exception.ErrorMessage;
+import com.hoangtan.moneycards.exception.MinusException;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 import com.hoangtan.moneycards.service.mapper.AssignMapper;
 import com.hoangtan.moneycards.service.mapper.JarTypeAttributeConverter;
@@ -17,6 +18,7 @@ import com.hoangtan.moneycards.service.model.MoneyCardDTO;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,9 +47,11 @@ public class AssignService {
     @Inject
     private MoneyCardMapper moneyCardMapper;
 
+
     private JarTypeAttributeConverter jarTypeAttributeConverter = new JarTypeAttributeConverter();
 
-    public List<AssignDTO> create(AssignDTO assignDTO, String email) throws ResourceNotFoundException {
+    @Transactional
+    public List<AssignDTO> create(AssignDTO assignDTO, String email) throws ResourceNotFoundException, MinusException {
         List<MoneyCardDTO> moneyCardDTOList = moneyCardService.findByUser(email);
 
         IncomeSource incomeSource = incomeSourceDAO.findById(assignDTO.getIncomeSourceId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_INCOME_SOURCE_NOT_FOUND, ErrorMessage.INCOME_SOURCE_NOT_FOUND));
@@ -63,19 +67,24 @@ public class AssignService {
             if (jarTypeAttributeConverter.convertToDatabaseColumn(moneyCardDTO.getJarType()) != 7) {
 
                 MoneyCard moneyCard = moneyCardMapper.toEntity(moneyCardDTO);
-                moneyCard.setBalance(moneyCard.getBalance() + assignDTO.getAmount()*moneyCardDTO.getPercentage());
-                moneyCard.setUser(userDAO.findByEmail(email).orElseThrow(()->new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS)));
+                moneyCard.setBalance(moneyCard.getBalance() + assignDTO.getAmount() * moneyCardDTO.getPercentage());
+                moneyCard.setUser(userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS)));
                 moneyCardDAO.update(moneyCard);
 
-                assign.setAmount(assignDTO.getAmount()*moneyCard.getPercentage());
+                assign.setAmount(assignDTO.getAmount() * moneyCard.getPercentage());
                 assign.setMoneyCard(moneyCard);
                 assignList.add(assignDAO.create(assign));
                 incomeSourceDAO.update(incomeSource);
-                incomeSource.setBalance(incomeSource.getBalance() - assign.getAmount());
+
+                if (incomeSource.getBalance() - assign.getAmount() < 0) {
+                    throw new MinusException(ErrorMessage.KEY_INCOME_SOURCE_NOT_NEGATIVE, ErrorMessage.INCOME_SOURCE_NOT_NEGATIVE);
+                } else incomeSource.setBalance(incomeSource.getBalance() - assign.getAmount());
 
             }
 
         }
-       return assignMapper.toDTOList(assignList);
+
+
+        return assignMapper.toDTOList(assignList);
     }
 }

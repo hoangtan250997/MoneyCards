@@ -8,8 +8,6 @@ public class ErrorMessage {
     //SKILL
     public static final String SKILL_NOT_FOUND = "Skill not found";
     public static final String KEY_SKILL_NOT_FOUND = "exception.resource.not.found.skill";
-    public static final String SKILL_ALREADY_EXISTED = "Skill already existed";
-    public static final String KEY_SKILL_ALREADY_EXISTED = "exception.input.validation.skill.already.existed";
     public static final String SKILL_NAME_LENGTH_CONSTRAINT = "Skill Name length cannot exceed 255 characters";
     public static final String KEY_SKILL_NAME_LENGTH_CONSTRAINT = "exception.input.validation.skill.name.length.over.max.length";
     public static final String SKILL_DESCRIPTION_LENGTH_CONSTRAINT = "Skill Description length cannot exceed 2000 characters";
@@ -25,9 +23,12 @@ public class ErrorMessage {
     public static final String INCOME_SOURCE_NOT_FOUND = "Income Source not found";
     public static final String KEY_INCOME_SOURCE_NOT_FOUND = "exception.resource.not.found.income.source";
 
+    public static final String INCOME_SOURCE_NOT_NEGATIVE = "Income Source can not be negative";
+    public static final String KEY_INCOME_SOURCE_NOT_NEGATIVE = "exception.resource.income.source.not.be.negative";
+
+
+
     //TOPIC
-    public static final String DUPLICATED_TOPIC_NAME = "Topic Name duplicated";
-    public static final String KEY_DUPLICATED_TOPIC_NAME = "exception.input.validation.duplicated.topic.name";
     public static final String TOPIC_NAME_BLANK_OR_NULL = "Topic Name cannot be null or blank";
     public static final String KEY_TOPIC_NAME_BLANK_OR_NULL = "exception.input.validation.topic.name.null.or.blank";
     public static final String TOPIC_NAME_LENGTH_CONSTRAINT = "Topic Name must have at least 3 characters and less than 255 characters";
@@ -60,18 +61,10 @@ public class ErrorMessage {
     public static final String KEY_PASSWORD_NOT_ENCODED = "exception.input.validation.password.not.encoded";
 
     //Department
-    public static final String DEPARTMENT_NOT_FOUND = "Department not found";
-    public static final String KEY_DEPARTMENT_NOT_FOUND = "exception.resource.not.found.department";
     public static final String DEPARTMENT_NAME_NULL_OR_BLANK = "Department Name cannot be null, empty or blank";
     public static final String KEY_DEPARTMENT_NAME_NULL_OR_BLANK = "exception.input.validation.department.name.null.empty.or.blank";
     public static final String DEPARTMENT_NAME_LENGTH_CONSTRAINT = "Department Name cannot exceed 255 characters";
     public static final String KEY_DEPARTMENT_NAME_LENGTH_CONSTRAINT = "exception.input.validation.department.name.over.max.length";
-
-    //Team
-    public static final String TEAM_NAME_NULL_OR_BLANK = "Team Name cannot be null, empty or blank";
-
-    private ErrorMessage() {
-    }
 
     static Map<String, String> errorKeyAndMessageMap() {
         Map<String, String> errorMap = new HashMap<>();

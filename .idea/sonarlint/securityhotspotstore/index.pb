@@ -19,7 +19,5 @@ v
 Fsrc/main/java/com/hoangtan/moneycards/service/mapper/AssignMapper.java,1\6\16d341f4be28072992eb732842adb4e541cbeecf
 t
 Dsrc/main/java/com/hoangtan/moneycards/security/utility/JwtUtils.java,b\b\bb9175c9c18431a78c428c7f62fec0bfe66b14d7
-q
-Asrc/main/java/com/hoangtan/moneycards/exception/ErrorMessage.java,7\a\7a0031c3120d4d1eac92eb537a7967502ce7b4a1
 x
 Hsrc/main/java/com/hoangtan/moneycards/service/mapper/SpendingMapper.java,2\f\2ff9c5cd674c396e7bac353b775e25e15f42461f
