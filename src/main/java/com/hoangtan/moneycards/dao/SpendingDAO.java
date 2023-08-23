@@ -1,6 +1,5 @@
 package com.hoangtan.moneycards.dao;
 
-import com.hoangtan.moneycards.entity.MoneyCard;
 import com.hoangtan.moneycards.entity.Spending;
 
 import javax.ejb.Stateless;
@@ -18,13 +17,17 @@ public class SpendingDAO {
         return spending;
     }
 
-    public List<Spending> findByJarTypeAndUser(int jarType,Long userId) {
-        List<Spending> spendingList = em.createQuery("SELECT s FROM Spending s " +
+    public List<Spending> findByJarTypeAndUser(int jarType, Long userId) {
+        return em.createQuery("SELECT s FROM Spending s " +
                         "WHERE s.user.id = :userId AND s.jarType = :jarType", Spending.class)
                 .setParameter("userId", userId)
                 .setParameter("jarType", jarType)
                 .getResultList();
+    }
 
-        return spendingList;
+    public List<Spending> findByUser(Long userId) {
+        return em.createQuery("SELECT s FROM Spending s WHERE s.user.id = :userId", Spending.class)
+                .setParameter("userId", userId)
+                .getResultList();
     }
 }

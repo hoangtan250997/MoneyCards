@@ -43,4 +43,13 @@ public class SpendingResource {
         return Response.ok(spendingDTOList).build();
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Response findByUser(@HeaderParam("Authorization") String authorization) throws ResourceNotFoundException {
+        String email = jwtUtils.getEmailFromToken(authorization);
+        List<SpendingDTO> createdSpending = spendingService.findByUser(email);
+        return Response.ok().entity(createdSpending).status(Response.Status.CREATED).build();
+    }
+
 }
