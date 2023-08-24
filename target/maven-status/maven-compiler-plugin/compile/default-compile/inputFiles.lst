@@ -23,6 +23,7 @@ D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\ex
 D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\exception\AuthorizationException.java
 D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\exception\ErrorMessage.java
 D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\resource\AssignResource.java
+D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\config\CORSFilter.java
 D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\config\SwaggerConfig.java
 D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\service\SpendingService.java
 D:\Chris\7. Personal project\MoneyCards\src\main\java\com\hoangtan\moneycards\config\RestConfiguration.java

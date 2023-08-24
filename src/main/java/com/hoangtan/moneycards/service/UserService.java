@@ -1,12 +1,13 @@
 package com.hoangtan.moneycards.service;
 
-
 import com.hoangtan.moneycards.dao.UserDAO;
 import com.hoangtan.moneycards.entity.*;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.InputValidationException;
 import com.hoangtan.moneycards.service.mapper.JarTypeAttributeConverter;
 import com.hoangtan.moneycards.service.mapper.UserMapper;
+import com.hoangtan.moneycards.service.model.IncomeSourceDTO;
+import com.hoangtan.moneycards.service.model.MoneyCardDTO;
 import com.hoangtan.moneycards.service.model.UserDTO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
@@ -37,12 +38,16 @@ public class UserService {
     private UserDAO userDAO;
     @Inject
     private UserMapper userMapper;
+    @Inject
+    private MoneyCardService moneyCardService;
+    @Inject
+    private IncomeSourceService incomeSourceService;
 
     private JarTypeAttributeConverter jarTypeAttributeConverter = new JarTypeAttributeConverter();
 
-    public List<UserDTO> findAll(){
-    List<User> userList = userDAO.findAll();
-    return userMapper.toDTOList(userList);
+    public List<UserDTO> findAll() {
+        List<User> userList = userDAO.findAll();
+        return userMapper.toDTOList(userList);
     }
 
     public UserDTO create(UserDTO user) throws InputValidationException {
@@ -120,5 +125,15 @@ public class UserService {
             throw new InputValidationException(ErrorMessage.KEY_PASSWORD_NOT_ENCODED,
                     ErrorMessage.PASSWORD_NOT_ENCODED);
         }
+    }
+
+    public Double returnAllMoney(String email) {
+        List<IncomeSourceDTO> incomeSourceDTOList = incomeSourceService.findByUser(email);
+        List<MoneyCardDTO> moneyCardDTOList = moneyCardService.findByUser(email);
+
+        Double incomeSourceAmount = incomeSourceDTOList.stream().mapToDouble(IncomeSourceDTO::getBalance).sum();
+        Double moneyCardAmount = moneyCardDTOList.stream().mapToDouble(MoneyCardDTO::getBalance).sum();
+
+        return incomeSourceAmount + moneyCardAmount;
     }
 }

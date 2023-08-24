@@ -40,12 +40,10 @@ public class MoneyCardDAO {
     }
 
     public List<MoneyCard> findByUser(Long id) {
-        List<MoneyCard> moneyCardList = em.createQuery("SELECT t FROM MoneyCard t " +
+        return em.createQuery("SELECT t FROM MoneyCard t " +
                         "WHERE t.user.id = :id ORDER BY t.jarType ", MoneyCard.class)
                 .setParameter("id", id)
                 .getResultList();
-
-        return moneyCardList;
     }
 
     public void update(MoneyCard moneyCard) {

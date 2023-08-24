@@ -5,9 +5,7 @@ import com.hoangtan.moneycards.exception.MinusException;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 import com.hoangtan.moneycards.security.utility.JwtUtils;
 import com.hoangtan.moneycards.service.AssignService;
-import com.hoangtan.moneycards.service.MoneyCardService;
 import com.hoangtan.moneycards.service.model.AssignDTO;
-import com.hoangtan.moneycards.service.model.MoneyCardDTO;
 import io.swagger.annotations.Api;
 
 import javax.inject.Inject;

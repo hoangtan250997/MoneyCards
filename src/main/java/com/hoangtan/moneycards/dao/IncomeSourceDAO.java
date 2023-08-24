@@ -1,8 +1,6 @@
 package com.hoangtan.moneycards.dao;
 
 import com.hoangtan.moneycards.entity.IncomeSource;
-import com.hoangtan.moneycards.entity.MoneyCard;
-import com.hoangtan.moneycards.entity.User;
 import com.hoangtan.moneycards.exception.ErrorMessage;
 import com.hoangtan.moneycards.exception.ResourceNotFoundException;
 
@@ -40,11 +38,10 @@ public class IncomeSourceDAO {
     }
 
     public List<IncomeSource> findByUser(Long id) {
-        List<IncomeSource> incomeSourceList = em.createQuery("SELECT i FROM IncomeSource i " +
+        return em.createQuery("SELECT i FROM IncomeSource i " +
                         "WHERE i.user.id = :id ", IncomeSource.class)
                 .setParameter("id", id)
                 .getResultList();
-        return incomeSourceList;
     }
 
     public void update(IncomeSource incomeSource){
