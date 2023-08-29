@@ -11,8 +11,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-24T15:05:07+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.18 (Oracle Corporation)"
+    date = "2023-08-24T21:39:57+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Oracle Corporation)"
 )
 @ApplicationScoped
 public class AssignMapperImpl implements AssignMapper {

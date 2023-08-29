@@ -43,15 +43,5 @@ x
 Hsrc/main/java/com/hoangtan/moneycards/resource/IncomeSourceResource.java,c\4\c44ed935da672ddae512e65f3c3a600671eb0208
 r
 Bsrc/main/java/com/hoangtan/moneycards/resource/AssignResource.java,0\7\0722655bf56d8367eca2a9c657dce6180490a3cb
-j
-:src/main/java/com/hoangtan/moneycards/dao/SpendingDAO.java,b\f\bf16f5d98e4f4c1585ac0e0d6861d79cdd5d7b88
-h
-8src/main/java/com/hoangtan/moneycards/dao/AssignDAO.java,2\9\2953c62850b1bc28b68f1627b2db8906e639d84f
 s
 Csrc/main/java/com/hoangtan/moneycards/service/MoneyCardService.java,4\2\42305432d00de44446cf1248f9ecbc04d8a0a256
-f
-6src/main/java/com/hoangtan/moneycards/dao/UserDAO.java,1\2\1247176c9d543014d87e38ad762386cca5cd929e
-k
-;src/main/java/com/hoangtan/moneycards/dao/MoneyCardDAO.java,a\3\a34f754a18510bbcd1f67d3f18fa8c05f09ddfb4
-n
->src/main/java/com/hoangtan/moneycards/dao/IncomeSourceDAO.java,d\2\d267aa4228f681b527de9fc3ae76d4fa2f762000
