@@ -40,6 +40,7 @@ public class SpendingService {
                 .spendingTime(spendingDTO.getSpendingTime() == null ? LocalDate.now() : spendingDTO.getSpendingTime())
                 .moneyCard(moneyCardDAO.findById(spendingDTO.getMoneyCardId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_CARD_NOT_FOUND, ErrorMessage.CARD_NOT_FOUND)))
                 .purpose(spendingDTO.getPurpose())
+                .note(spendingDTO.getNote())
                 .user(userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS, ErrorMessage.UNAUTHORIZED_ACCESS)))
                 .build();
         MoneyCard moneyCard = moneyCardDAO.findById(spendingDTO.getMoneyCardId()).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_CARD_NOT_FOUND, ErrorMessage.CARD_NOT_FOUND));

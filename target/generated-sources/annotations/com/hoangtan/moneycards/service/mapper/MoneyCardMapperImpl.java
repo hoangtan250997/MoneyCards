@@ -10,8 +10,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-30T00:17:39+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Oracle Corporation)"
+    date = "2023-08-31T09:48:13+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.18 (Oracle Corporation)"
 )
 @ApplicationScoped
 public class MoneyCardMapperImpl implements MoneyCardMapper {

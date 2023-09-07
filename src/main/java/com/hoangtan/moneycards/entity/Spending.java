@@ -32,7 +32,7 @@ public class Spending {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
     private LocalDate spendingTime;
     private String purpose;
-
+    private String note;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

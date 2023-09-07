@@ -11,8 +11,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-30T00:17:39+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Oracle Corporation)"
+    date = "2023-08-31T09:48:12+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.18 (Oracle Corporation)"
 )
 @ApplicationScoped
 public class SpendingMapperImpl implements SpendingMapper {
@@ -43,6 +43,7 @@ public class SpendingMapperImpl implements SpendingMapper {
         spending.amount( DTO.getAmount() );
         spending.spendingTime( DTO.getSpendingTime() );
         spending.purpose( DTO.getPurpose() );
+        spending.note( DTO.getNote() );
 
         return spending.build();
     }
@@ -75,6 +76,7 @@ public class SpendingMapperImpl implements SpendingMapper {
         spendingDTO.setAmount( spending.getAmount() );
         spendingDTO.setSpendingTime( spending.getSpendingTime() );
         spendingDTO.setPurpose( spending.getPurpose() );
+        spendingDTO.setNote( spending.getNote() );
 
         return spendingDTO;
     }

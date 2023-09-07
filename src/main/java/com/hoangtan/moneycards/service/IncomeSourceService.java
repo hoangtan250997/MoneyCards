@@ -32,8 +32,8 @@ public class IncomeSourceService {
         IncomeSource incomeSource = IncomeSource.builder()
                 .name(incomeSourceDTO.getName())
                 .balance(incomeSourceDTO.getBalance())
-                .user(userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_SKILL_NOT_FOUND,
-                        ErrorMessage.SKILL_NOT_FOUND)))
+                .user(userDAO.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException(ErrorMessage.KEY_UNAUTHORIZED_ACCESS,
+                        ErrorMessage.UNAUTHORIZED_ACCESS)))
                 .build();
         return incomeSourceMapper.toDTO(incomeSourceDAO.create(incomeSource));
     }

@@ -30,6 +30,7 @@ public class SpendingDTO {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
     private LocalDate spendingTime;
     private String purpose;
+    private String note;
 
     private Long userId;
 
